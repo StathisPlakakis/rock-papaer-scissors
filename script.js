@@ -28,20 +28,20 @@ function playTheGame(playerSelection, computerSelection) {
         computerSelection = getComputerChoice(0, 2);
     }
     if (playerSelection === "Rock" && computerSelection === "Paper"){
-        console.log(`You LOSE! ${playerSelection} loses from ${computerSelection}`)
+        console.log(`You LOSE! ${playerSelection} loses from ${computerSelection}`);
     }else if (playerSelection === "Rock" && computerSelection === "Scissors"){
-        console.log(`You WIN! ${playerSelection} beats ${computerSelection}`)
-        return 1
+        console.log(`You WIN! ${playerSelection} beats ${computerSelection}`);
+        return 1;
     }else if (playerSelection === "Paper" && computerSelection === "Scissors"){
-        console.log(`You LOSE! ${playerSelection} loses from ${computerSelection}`)
+        console.log(`You LOSE! ${playerSelection} loses from ${computerSelection}`);
     }else if (playerSelection === "Paper" && computerSelection === "Rock"){
-        console.log(`You WIN! ${playerSelection} beats ${computerSelection}`)
-        return 1
+        console.log(`You WIN! ${playerSelection} beats ${computerSelection}`);
+        return 1;
     }else if (playerSelection === "Scissors" && computerSelection === "Rock"){
-        console.log(`You LOSE! ${playerSelection} loses from ${computerSelection}`)
+        console.log(`You LOSE! ${playerSelection} loses from ${computerSelection}`);
     }else if (playerSelection === "Scissors" && computerSelection === "Paper"){
-        console.log(`You WIN! ${playerSelection} beatsg ${computerSelection}`)
-        return 1
+        console.log(`You WIN! ${playerSelection} beatsg ${computerSelection}`);
+        return 1;
     }
 }
 
@@ -49,8 +49,14 @@ function playTheGame(playerSelection, computerSelection) {
 function game() {
     let playerScore = 0;
     let computerScore = 0;
+    console.log("Welcome to the famous game of rock-paper-scissors!!!")
+    console.log(`Score ------> Player: ${playerScore} - Computer: ${computerScore}`);
+    console.log(`=================================================================`);
+    console.log(`=================================================================`);
+    console.log(`=================================================================`);
+    console.log('\n');
+
     while (playerScore < 5 && computerScore < 5) {
-        console.log(`Score ------> Player: ${playerScore} - Computer: ${computerScore}`);
         let player = getPlayerChoice();
         let computer = getComputerChoice(0, 2);
         if (playTheGame(player, computer)) {
@@ -58,6 +64,9 @@ function game() {
         }else {
             computerScore += 1;
         }
+        console.log(`Score ------> Player: ${playerScore} - Computer: ${computerScore}`);
+        console.log(`=================================================================`);
+        console.log('\n');
     }
     const winner = (playerScore === 5) ? 'player' : 'computer';
     (winner === 'player') ? 
