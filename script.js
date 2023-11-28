@@ -4,4 +4,12 @@ function getComputerChoice(min, max) {
     return choices[randomNumber];
     }
 
-getComputerChoice(0, 2)
+
+function getPlayerChoice() {
+    playerSelection = prompt("Choose: 'Rock' - 1, 'Paper' - 2, 'Scissors' - 3")
+    while (playerSelection !== '1' && playerSelection !== '2' && playerSelection !== '3') {
+        playerSelection = prompt("Choose only between: '1' - '2' - '3'");
+    }
+    return playerSelection;
+}
+
