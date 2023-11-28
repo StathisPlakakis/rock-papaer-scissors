@@ -10,6 +10,13 @@ function getPlayerChoice() {
     while (playerSelection !== '1' && playerSelection !== '2' && playerSelection !== '3') {
         playerSelection = prompt("Choose only between: '1' - '2' - '3'");
     }
+    if (playerSelection === '1') {
+        playerSelection = 'Rock'
+    }else if (playerSelection === '2') {
+        playerSelection = 'Paper'
+    }else{
+        playerSelection = 'Scissors'
+    }
     return playerSelection;
 }
 
