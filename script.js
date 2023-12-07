@@ -9,9 +9,16 @@ function getComputerChoice(min, max) {
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click',() => {
-        console.log(button.className);
+        const computer = getComputerChoice(0, 2);
+        const player = button.className;
+        const div = document.querySelector('div');
+        div.textContent = "Computer choice: " + computer +" vs Your choice: " + player;
+    });
     })
-    })
+
+
+const div = document.querySelector('div');
+div.textContent = computer 
 
 function playTheGame(playerSelection, computerSelection) {
     while (playerSelection === computerSelection) {
