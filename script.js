@@ -5,44 +5,40 @@ function getComputerChoice(min, max) {
     return computerSelection;
     }
 
+    function playTheGame(playerSelection, computerSelection) {
+        let div = document.querySelector('div');
+        if (playerSelection === computerSelection) {
+            div.textContent ='It\'s a Tie. Round repeats!!!';
+        }
+        if (playerSelection === "Rock" && computerSelection === "Paper"){
+            div.textContent =`You LOSE! ${playerSelection} loses from ${computerSelection}`;
+        }else if (playerSelection === "Rock" && computerSelection === "Scissors"){
+            div.textContent =`You WIN! ${playerSelection} beats ${computerSelection}`;
+            return 1;
+        }else if (playerSelection === "Paper" && computerSelection === "Scissors"){
+            div.textContent =`You LOSE! ${playerSelection} loses from ${computerSelection}`;
+        }else if (playerSelection === "Paper" && computerSelection === "Rock"){
+            div.textContent =`You WIN! ${playerSelection} beats ${computerSelection}`;
+            return 1;
+        }else if (playerSelection === "Scissors" && computerSelection === "Rock"){
+            div.textContent =`You LOSE! ${playerSelection} loses from ${computerSelection}`;
+        }else if (playerSelection === "Scissors" && computerSelection === "Paper"){
+            div.textContent =`You WIN! ${playerSelection} beatsg ${computerSelection}`;
+            return 1;
+        }
+    }
+
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click',() => {
         const computer = getComputerChoice(0, 2);
         const player = button.className;
-        const div = document.querySelector('div');
-        div.textContent = "Computer choice: " + computer +" vs Your choice: " + player;
-    });
+        playTheGame(player, computer);
     })
+})
 
 
-const div = document.querySelector('div');
-div.textContent = computer 
-
-function playTheGame(playerSelection, computerSelection) {
-    while (playerSelection === computerSelection) {
-        console.log('It\'s a Tie. Round repeats!!!');
-        playerSelection = getPlayerChoice();
-        computerSelection = getComputerChoice(0, 2);
-    }
-    if (playerSelection === "Rock" && computerSelection === "Paper"){
-        console.log(`You LOSE! ${playerSelection} loses from ${computerSelection}`);
-    }else if (playerSelection === "Rock" && computerSelection === "Scissors"){
-        console.log(`You WIN! ${playerSelection} beats ${computerSelection}`);
-        return 1;
-    }else if (playerSelection === "Paper" && computerSelection === "Scissors"){
-        console.log(`You LOSE! ${playerSelection} loses from ${computerSelection}`);
-    }else if (playerSelection === "Paper" && computerSelection === "Rock"){
-        console.log(`You WIN! ${playerSelection} beats ${computerSelection}`);
-        return 1;
-    }else if (playerSelection === "Scissors" && computerSelection === "Rock"){
-        console.log(`You LOSE! ${playerSelection} loses from ${computerSelection}`);
-    }else if (playerSelection === "Scissors" && computerSelection === "Paper"){
-        console.log(`You WIN! ${playerSelection} beatsg ${computerSelection}`);
-        return 1;
-    }
-}
 
 /*
 function game() {
