@@ -41,6 +41,21 @@ function getComputerChoice(min, max) {
         button.addEventListener('click',() => {
             const computer = getComputerChoice(0, 2);
             const player = button.className;
-            playTheGame(player, computer);
+            const result = playTheGame(player, computer);
+            if (result === 1) {
+                playerScore += 1;
+                score.textContent = `Player : ${playerScore} vs Computer : ${computerScore}`;
+            }else if (result === 2) {
+                computerScore += 1;
+                score.textContent = `Player : ${playerScore} vs Computer : ${computerScore}`;
+            }
         })
     })
+
+    const score = document.querySelector('.score');
+    score.style.backgroundColor = 'red';
+    let playerScore = 0;
+    let computerScore = 0;
+    score.style.fontSize = '24px';
+    score.style.marginBottom = '20px';
+    score.textContent = `Player : ${playerScore} vs Computer : ${computerScore}`;
